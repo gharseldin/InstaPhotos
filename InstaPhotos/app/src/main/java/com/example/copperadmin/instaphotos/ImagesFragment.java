@@ -4,12 +4,10 @@ package com.example.copperadmin.instaphotos;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ListView;
 
 import com.android.volley.Response;
@@ -17,7 +15,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 
 import org.json.JSONObject;
 
@@ -29,10 +26,13 @@ import org.json.JSONObject;
 public class ImagesFragment extends android.support.v4.app.Fragment {
 
 
+
     private String mJsonString=null;
     private Picture[] mPictures;
     private Gson gson;
     private ImageRecordsAdapter mAdapter;
+
+    private ListView mListView;
 
     public ImagesFragment() {
         // Required empty public constructor
@@ -89,18 +89,21 @@ public class ImagesFragment extends android.support.v4.app.Fragment {
 
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
         mAdapter = new ImageRecordsAdapter(getActivity());
-        ListView listView = (ListView) getView().findViewById(R.id.list1);
-        listView.setAdapter(mAdapter);
+
+            ListView listView = (ListView) getView().findViewById(R.id.list1);
+            listView.setAdapter(mAdapter);
+
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
 
+        View v = inflater.inflate(R.layout.fragment_images, container, false);
+        mListView = (ListView)v.findViewById(R.id.list1);
 
-
-
+        return v;
     }
 }

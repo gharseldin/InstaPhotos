@@ -39,7 +39,7 @@ public class SimpleDeserializer implements JsonDeserializer<String[]> {
 
                 urls[i] = lowResolutionObject.get("url").getAsString();
             }else{
-                urls[i] = "NA";
+                urls[i] = "http://www.britishlegion.org.uk/ImageGen.ashx?width=800&image=/media/2019101/id23055-normandy-66th_-schools-visit-poppy-choice_-pupils-from-london-city-academy.jpg";
             }
         }
         return urls;
