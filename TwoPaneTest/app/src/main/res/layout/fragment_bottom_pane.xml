@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="com.example.copperadmin.twopanetest.EditorFragment">
+
+
+    <TextView
+        android:id="@+id/text_view_screen"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/fragment_surrounding_margin"
+        android:layout_weight="1"
+        android:text="This is some text"/>
+
+</LinearLayout>
